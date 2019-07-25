@@ -6,7 +6,7 @@
      steps:
        - checkout
        - run:
-           name: Build and run Docker image
-           command: apt-get install -y default-jdk && freeswitch -ncwait && ./gradlew clean test
+           name: Start FS and run tests on it  
+           command: apt-get install -y default-jdk && freeswitch -ncwait && fs_cli -x status && ./gradlew clean test --debug
            environment:
               TERM: dumb
