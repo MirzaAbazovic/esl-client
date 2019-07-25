@@ -9,4 +9,4 @@
        - checkout
        - run:
            name: Build and run Docker image
-           command: docker build -t $IMAGE_NAME:latest . && docker run --rm $IMAGE_NAME
+           command: apt-get install -y default-jdk && freeswitch -ncwait && ./gradlew clean test
