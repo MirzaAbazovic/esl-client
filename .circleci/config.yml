@@ -1,0 +1,12 @@
+ version: 2
+ jobs:
+   build:
+     environment:
+       IMAGE_NAME: abazovic/test-esl
+     docker:
+       - image: .
+     steps:
+       - checkout
+       - run:
+           name: Build and run Docker image
+           command: docker build -t $IMAGE_NAME:latest . && docker run --rm $IMAGE_NAME
