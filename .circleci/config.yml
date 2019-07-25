@@ -1,8 +1,6 @@
  version: 2
  jobs:
    build:
-     environment:
-       IMAGE_NAME: abazovic/test-esl
      docker:
        - image: abazovic/fs-vanilla
      steps:
@@ -10,3 +8,5 @@
        - run:
            name: Build and run Docker image
            command: apt-get install -y default-jdk && freeswitch -ncwait && ./gradlew clean test
+           environment:
+              TERM: dumb
