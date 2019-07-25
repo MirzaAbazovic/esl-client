@@ -4,7 +4,7 @@
      environment:
        IMAGE_NAME: abazovic/test-esl
      docker:
-       - image: .
+       - image: abazovic/fs-vanilla
      steps:
        - checkout
        - run:
